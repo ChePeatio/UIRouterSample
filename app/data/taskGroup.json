@@ -1,0 +1,5 @@
+[
+  {"heading": "tg 1", "router": "main.tab1.tg1", "active": false},
+  {"heading": "tg 2", "router": "main.tab1.tg2", "active": false},
+  {"heading": "tg 3", "router": "main.tab1.tg3", "active": false}
+]

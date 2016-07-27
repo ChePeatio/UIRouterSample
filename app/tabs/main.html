@@ -1,0 +1,13 @@
+<div ng-controller="mainController">
+    <uib-tabset>
+        <uib-tab
+            ng-repeat="t in tabs"
+            heading="{{t.heading}}"
+            select="go(t.router)"
+            active="t.active">
+
+        </uib-tab>
+    </uib-tabset>
+    <h2>View:</h2>
+    <div ui-view></div>
+</div>
