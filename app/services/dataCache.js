@@ -5,9 +5,9 @@
 
 /* Services */
 
-var myAppServices = angular.module('myAppServices', []);
+var appServices = angular.module('myAppService');
 
-myAppServices.factory('dataCache', function () {
+appServices.factory('dataCache', function () {
     var cache = {};
     var callbacks = {};
     return {

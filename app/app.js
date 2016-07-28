@@ -1,5 +1,40 @@
 'use strict';
 
+angular.module('appServices', []);
+
+angular.module('appControllers', ['appServices']);
+
+var app = angular.module('myApp', [
+    'ngRoute',
+    'ui.bootstrap',
+    'ui.router',
+    'appServices',
+    'appControllers'
+]);
+
+app.config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise("/home");
+    $stateProvider.state("main", {
+        abstract: true,
+        url: "/main",
+        templateUrl: "main/main.html",
+        controller: "mainCtrl"
+    }).state("main.home", {
+        url: "/home",
+        templateUrl: "home/home.html",
+        controller: "homeCtrl"
+    }).state("main.jobs", {
+        url: "/jobs",
+        templateUrl: "jobs/jobs.html",
+        controller: "jobsCtrl"
+    }).state("main.jobs.details", {
+        url: "/details/:id",
+        templateUrl:"",
+
+    })
+});
+
+/*
 // Declare app level module which depends on views, and components
 var app = angular.module('myApp', [
     'ngRoute',
@@ -37,4 +72,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: "/tab3",
         templateUrl: "tabs/tab3.html"
     });
-});
+});*/
