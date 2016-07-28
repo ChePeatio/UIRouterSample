@@ -1,10 +1,9 @@
 <div>
-    <p>{{jobs}}</p>
     <uib-tabset>
         <uib-tab
                 ng-repeat="job in jobs"
                 heading={{job.job.name}}
-                select="go(job.job.router)">
+                select="go(job.index)">
 
             <p>{{job.job.name}}</p>
             <p>{{job.index}}</p>

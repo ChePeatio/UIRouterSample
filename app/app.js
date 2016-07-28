@@ -29,8 +29,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         controller: "jobsCtrl"
     }).state("main.jobs.details", {
         url: "/details/:id",
-        templateUrl:"",
-
+        templateUrl:"jobDetail/jobDetail.html",
+        controller: "jobDetailCtrl"
     })
 });
 
