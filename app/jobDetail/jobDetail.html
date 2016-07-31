@@ -1,0 +1,20 @@
+<div ng-repeat="job in jobs">
+    <h1>{{job.index}}</h1>
+    <div ng-if="job.job.type==='ComboBox'">
+        <div class="btn-group" uib-dropdown>
+            <button id="split-button" type="button" class="btn btn-primary">{{job.job.instance}}</button>
+            <button type="button" class="btn btn-danger" uib-dropdown-toggle>
+                <span class="caret"></span>
+                <span class="sr-only">Split button!</span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+                <li role="menuitem" ng-repeat="content in job.job.list">
+                    <a href="#">{{content}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div ng-if="job.job.type==='TextArea'">
+        <p>{{job.job.instance}}: {{job.job.description}}</p>
+    </div>
+</div>

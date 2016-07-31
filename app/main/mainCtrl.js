@@ -6,14 +6,15 @@
 
 var appController = angular.module("appControllers");
 
-appController.controller('mainCtrl', ["$scope", "$state",
-    function ($scope, $state) {
+appController.controller('mainCtrl', ["$scope", "$state", "$window",
+    function ($scope, $state, $window) {
         $scope.tabs = [
             {heading: "Tab 1", router: "main.home"},
             {heading: "Tab 2", router: "main.jobs"}
         ];
 
         $scope.go = function (router) {
+            $window.console.log("fire the router");
             $state.go(router);
         };
 

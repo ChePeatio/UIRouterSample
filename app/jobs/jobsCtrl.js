@@ -13,11 +13,12 @@ appController.controller("jobsCtrl", ["$scope", "$window", "$state", "jobSet",
          {name: "test1", router: "jobs.2", active: false}
          ];*/
         $scope.jobs = jobSet.get();
+        $window.console.log("hehe");
 
         $scope.go = function (index) {
-
+            $window.console.log("hehe1");
             var router = 'main.jobs.details';
-            $state.go(router, {"index" : index});
+            $state.go(router);
         };
     }
 ]);

@@ -6,11 +6,11 @@
 
 var appController = angular.module("appControllers");
 
-appController.controller('homeCtrl', ["$scope", "$state", "jobSet",
-    function ($scope, $state, jobSet) {
+appController.controller('homeCtrl', ["$scope", "$state", "$window", "jobSet",
+    function ($scope, $state, $window, jobSet) {
         $scope.jobs = [
-            {name: "job1", description: "job1 is an easy job!"},
-            {name: "job2", description: "job2 is a different job!"}
+            {name: "job1", instance:"Version", type: "ComboBox", list: ["aa", "bbb", "cccc"], description: "job1 is an easy job!"},
+            {name: "job2", instance:"Comment", type: "TextArea", description: "job2 is a different job!"}
         ];
 
         $scope.createTab = function (jobName) {
@@ -22,6 +22,7 @@ appController.controller('homeCtrl', ["$scope", "$state", "jobSet",
                 var temp = {};
                 temp.job = job;
                 temp.index = jobSet.get().length;
+                $window.console.log("Add tab: " + temp.index + " " + temp.job);
                 jobSet.set(temp);
             }
         };

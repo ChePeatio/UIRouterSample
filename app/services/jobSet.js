@@ -8,14 +8,17 @@
 
 var appServices = angular.module('appServices');
 
-appServices.factory('jobSet', function () {
-    var jobSet = [];
-    return {
-        set: function(value){
-            jobSet.push(value);
-        },
-        get: function () {
-            return jobSet;
+appServices.factory('jobSet', ["$window",
+    function ($window) {
+        var jobSet = [];
+        return {
+            set: function (value) {
+                jobSet.push(value);
+                $window.console.log("Current jobSet size: " + jobSet.length);
+            },
+            get: function () {
+                return jobSet;
+            }
         }
     }
-});
+]);
