@@ -26,12 +26,17 @@ app.config(["$stateProvider", "$urlRouterProvider",
             controller: "homeCtrl"
         }).state("main.jobs", {
             url: "/jobs",
-            templateUrl: "jobs/jobs.html",
-            controller: "jobsCtrl"
+//            templateUrl: "jobs/jobs.html",
+            views: {
+                '': {templateUrl: "jobs/jobs.html",
+                    controller: "jobsCtrl"},
+                'jobDetail@main.jobs': {
+                    templateUrl: "jobDetail/jobDetail.html"
+                }
+            }
         }).state("main.jobs.details", {
             url: "/details",
             templateUrl: "jobDetail/jobDetail.html",
-            controller: "jobDetailCtrl"
         })
     }]);
 

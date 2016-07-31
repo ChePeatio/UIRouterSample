@@ -3,12 +3,12 @@
         <uib-tab
                 ng-repeat="job in jobs"
                 heading={{job.job.name}}
-                select="go(job.index)">
+                select="jobSelect(job.index)">
 
             <p>{{job.job.name}}</p>
             <p>{{job.index}}</p>
 
-            <div ui-view></div>
+            <div ui-view="jobDetail"></div>
 
         </uib-tab>
     </uib-tabset>
